@@ -1,0 +1,188 @@
+<link rel="stylesheet" href="CSS/bootstrap.min.css">
+<link rel="stylesheet" href="CSS/basic.css">
+<link rel="stylesheet" href="CSS/themeBlueGrey.css">
+<link rel='stylesheet' href='CSS/gFont.css'>
+<link rel="stylesheet" href="CSS/fontAwesome.css">
+<link rel="stylesheet" href="CSS/table.css">
+<link rel="stylesheet" href="CSS/jquery-ui.min.css">
+
+<script type="text/javascript" src="JS/Chart.js"></script>
+
+<link type="text/css" rel="stylesheet" href="JS/jsgrid/jsgrid.min.css"/>
+<link type="text/css" rel="stylesheet" href="JS/jsgrid/jsgrid-theme.min.css"/>
+
+<script src="JS/jquery.js"></script>
+<script src="JS/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="JS/jsgrid/jsgrid.min.js"></script>
+<script type="text/javascript" src="JS/jsgrid/i18n/jsgrid-zh-tw.js"></script>
+
+
+<link rel="stylesheet" href="CSS/profileForm.css">
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="JS/bootstrap.min.js">
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        a {
+            text-decoration: none
+        }
+
+        table button{
+            width: 100%;
+        }
+
+        .Stop{
+            background-color: #f44336;
+        }
+
+        img {
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+
+<body>
+<!--<jsp:include page="header.jsp"/>-->
+<div id="header" >
+
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+        <!-- Left Column -->
+        <div id="leftContent"></div>
+        <!-- End Left Column -->
+
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+
+            <div class="w3-row-padding">
+                <div class="w3-col m12">
+
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <h1 align="center" >System Report</h1>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <div id="tabs">
+                                <ul>
+                                    <li><a href="#tabs-1">Sweeper Car</a></li>
+                                </ul>
+                                <div id="tabs-1">
+                                    <canvas id="myChart" width="300" height="200"></canvas>
+
+                                    <script type="text/javascript">
+
+                                        var ctx = document.getElementById("myChart");
+                                        var myChart = new Chart(ctx, {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ["Paper","Metals","Cans"] ,
+                                            datasets: [{
+                                                label : "Count" ,
+                                                data: [1,2,3] ,
+                                                backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                            borderColor: [
+                                            'rgba(255,99,132,1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)'
+                                        ],
+                                            borderWidth: 1
+                                        }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                yAxes: [{
+                                                    ticks: {
+                                                        beginAtZero:true
+                                                    }
+                                                }]
+                                            },
+                                            title: {
+                                                display: true,
+                                                    text: 'Total Count Of Recyclable Garbage In Each Type',
+                                                    fontSize : 20
+                                            }
+                                        }
+                                        });
+                                    </script>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+            <!-- End Middle Column -->
+        </div>
+
+
+        <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+</div>
+<br>
+<!--<jsp:include page="footer.jsp"/>-->
+
+<div id="footer"></div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+        $("#leftContent").load("leftContent.html");
+
+        $( "#tabs" ).tabs();
+
+        $("#search").keyup(function () {
+            $(".module").hide();
+            var input = $('#search').val().toUpperCase();
+            $(".module:contains(" + input + ")").show();
+
+        });
+    });
+</script>
+
+</body>
+</html>
+

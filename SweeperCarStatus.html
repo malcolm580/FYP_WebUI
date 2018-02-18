@@ -1,0 +1,196 @@
+<link rel="stylesheet" href="CSS/bootstrap.min.css">
+<link rel="stylesheet" href="CSS/basic.css">
+<link rel="stylesheet" href="CSS/themeBlueGrey.css">
+<link rel='stylesheet' href='CSS/gFont.css'>
+<link rel="stylesheet" href="CSS/fontAwesome.css">
+<link rel="stylesheet" href="CSS/table.css">
+<link rel="stylesheet" href="CSS/jquery-ui.min.css">
+
+<script type="text/javascript" src="JS/Chart.js"></script>
+
+<link type="text/css" rel="stylesheet" href="JS/jsgrid/jsgrid.min.css"/>
+<link type="text/css" rel="stylesheet" href="JS/jsgrid/jsgrid-theme.min.css"/>
+
+<script src="JS/jquery.js"></script>
+<script src="JS/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="JS/jsgrid/jsgrid.min.js"></script>
+<script type="text/javascript" src="JS/jsgrid/i18n/jsgrid-zh-tw.js"></script>
+
+
+<link rel="stylesheet" href="CSS/profileForm.css">
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="JS/bootstrap.min.js">
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        a {
+            text-decoration: none
+        }
+
+        table button{
+            width: 100%;
+        }
+
+        .Stop{
+            background-color: #f44336;
+        }
+
+        img {
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+
+<body>
+<!--<jsp:include page="header.jsp"/>-->
+<div id="header" >
+
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+    <!-- The Grid -->
+    <div class="w3-row">
+        <!-- Left Column -->
+        <div id="leftContent"></div>
+        <!-- End Left Column -->
+
+        <!-- Middle Column -->
+        <div class="w3-col m7">
+
+            <div class="w3-row-padding">
+                <div class="w3-col m12">
+
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <h1 align="center" >Sweeper One</h1>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="w3-card w3-round w3-white">
+                        <div class="w3-container w3-padding">
+                            <img src="image/StreamCam.png" alt="">
+                            <br>
+                            <br>
+                            <div id="tabs">
+                                <ul>
+                                    <li><a href="#tabs-1">Cleaning Info</a></li>
+                                    <li><a href="#tabs-2">Sensor Status</a></li>
+                                </ul>
+                                <div id="tabs-1">
+                                    <table class="table" width="100%" border="1">
+                                        <tr>
+                                            <th>Status Item</th>
+                                            <th>Details</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Sweeper ID</td>
+                                            <td>1</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Sweeper Name</td>
+                                            <td>Sweeper One</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Driving Distance At This Operation</td>
+                                            <td>20.3M</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Following Rubbish Bin Car</td>
+                                            <td>Yes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Following Rubbish Bin Car ID</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pick Up Count</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="tabs-2">
+                                    <table class="table" width="100%" border="1">
+                                        <tr>
+                                            <th>Sensors Item</th>
+                                            <th>Status</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Camera</td>
+                                            <td>OK</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>UltraSonic</td>
+                                            <td>OK</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+        <!-- End Middle Column -->
+    </div>
+
+
+    <!-- End Grid -->
+</div>
+
+<!-- End Page Container -->
+</div>
+<br>
+<!--<jsp:include page="footer.jsp"/>-->
+
+<div id="footer"></div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+        $("#leftContent").load("leftContent.html");
+
+        $( "#tabs" ).tabs();
+
+        $("#search").keyup(function () {
+            $(".module").hide();
+            var input = $('#search').val().toUpperCase();
+            $(".module:contains(" + input + ")").show();
+
+        });
+    });
+</script>
+
+</body>
+</html>
+
