@@ -1,9 +1,9 @@
 <?php
 //fuck windows
 //windows要在php.ini把extension_dir改成絕對路徑
-//https://gist.github.com/emad-elsaid/808796
+//source: https://gist.github.com/emad-elsaid/808796
 
-$range = '192.168.0.2-255';
+$range = '192.168.0.2-150';
 $range = explode('.', $range );
 foreach( $range as $index=>$octet )
     $range[$index] = array_map( 'intval', explode('-',$octet) );
@@ -15,11 +15,11 @@ for( $octet1=$range[0][0]; $octet1<=(($range[0][1])? $range[0][1]:$range[0][0]);
             for( $octet4=$range[3][0]; $octet4<=(($range[3][1])? $range[3][1]:$range[3][0]); $octet4++ )
             {
                 // assemble the IP address
-                $ip = $octet1.".".$octet2.".".$octet3.".".$octet4;
+                $ip = $octet1.".".$octet2.".".$octet3.".".$octet4.":9093";
 
                 // initialise the URL
                 $x = curl_init( $ip );
-
+                curl_setopt($x,CURLOPT_CONNECTTIMEOUT_MS,1);
                 // output buffer start becase it damn output the page HTML
                 ob_start();
                 // get page HTML
@@ -34,13 +34,15 @@ for( $octet1=$range[0][0]; $octet1<=(($range[0][1])? $range[0][1]:$range[0][0]);
                 $title_end = strpos( $buffer, '</title>');
 
                 // print the result for that IP address
-                echo $ip." : ";
-                if( $title_end!==false ) // if title tag exists
-                    echo trim(substr( $buffer, $title_start, $title_end-$title_start ))."\n"; // print title
+                if( $title_end!==false ) { // if title tag exists
+                    echo $ip . " : ";
+                    echo trim(substr($buffer, $title_start, $title_end - $title_start)) . "\n"; // print title
+                }
                 else if( strlen($buffer)>0 ) // if there is a response
-                    echo "Cannot get title\n";
+                    echo "Cannot get title<br />";
                 else
-                    echo "[Not a site]\n"; // if the isn't any response
+                    echo "";
+                    //echo "[Not a site]\n"; // if the isn't any response
             }
 
 ?>
