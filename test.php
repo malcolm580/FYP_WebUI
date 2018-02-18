@@ -1,6 +1,7 @@
 <?php
 //fuck windows
 //windows要在php.ini把extension_dir改成絕對路徑
+//https://gist.github.com/emad-elsaid/808796
 
 $range = '192.168.0.2-255';
 $range = explode('.', $range );
