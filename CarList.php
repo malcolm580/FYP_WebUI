@@ -2,7 +2,7 @@
 //fuck windows
 //windows要在php.ini把extension_dir改成絕對路徑
 //source: https://gist.github.com/emad-elsaid/808796
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $range = '192.168.0.2-150';
 $range = explode('.', $range );
 foreach( $range as $index=>$octet )
