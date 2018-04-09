@@ -4,7 +4,7 @@
     <servers>
       <server debugger_id="php.debugger.ZendDebugger" host="127.0.0.1" id="90aa8d7b-e684-4c20-b39c-588090032967" name="Unnamed" use_path_mappings="true">
         <path_mappings>
-          <mapping local-root="$PROJECT_DIR$" remote-root="C:/Users/onchun/IntelliJIDEAProjects/FYP_WebUI" />
+          <mapping local-root="$PROJECT_DIR$" remote-root="C:/xampp/htdocs" />
         </path_mappings>
       </server>
     </servers>
