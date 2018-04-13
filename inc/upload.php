@@ -1,27 +1,35 @@
 <?php
-if (isset($_POST['submit'])) {
-    $j = 0;     // Variable for indexing uploaded image.
-    $target_path = "uploads/";     // Declaring Path for uploaded images.
-    for ($i = 0; $i < count($_FILES['file']['name']); $i++) {
-// Loop to get individual element from the array
-        $validextensions = array("jpeg", "jpg", "png");      // Extensions which are allowed.
-        $ext = explode('.', basename($_FILES['file']['name'][$i]));   // Explode file name from dot(.)
-        $file_extension = end($ext); // Store extensions in the variable.
-        $target_path = $target_path . md5(uniqid()) . "." . $ext[count($ext) - 1];     // Set the target path with a new name of image.
-        $j = $j + 1;      // Increment the number of uploaded images according to the files in array.
-        if (($_FILES["file"]["size"][$i] >0)     // Approx. 100kb files can be uploaded.
-            && in_array($file_extension, $validextensions)) {
-            if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) {
-// If file moved to uploads folder.
-                echo $j . ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';
-            } else {     //  If File Was Not Moved.
-                echo $j . ').<span id="error">please try again!.</span><br/><br/>';
-            }
-        } else {     //   If File Size And File Type Was Incorrect.
-            echo $j . ').<span id="error">***Invalid file Size or Type***</span><br/><br/>';
-        }
-    }
-}else{
-    echo "fuck";
+define ('SITE_ROOT', realpath(dirname(__FILE__)));
+include 'configuration.php';
+extract($_POST);
+$target_dir =  "data".$IMAGE_WEB_DIR;
+$target_file = $target_dir . "/abc" . ".png";
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+
+if ($_FILES["image_uploads"]["size"] > 5000000) {
+    echo "Sorry, your file is too large.<br>";
+    $uploadOk = 0;
 }
+
+if ($imageFileType != "jpg" && $imageFileType != "png" &&
+    $imageFileType != "jpeg") {
+    echo "Sorry, only JPG, JPEG, PNG files are allowed.<br>";
+    $uploadOk = 0;
+}
+
+
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.<br>";
+} else {
+    if (file_exists($target_file))
+        unlink($target_file);
+    echo "FUCKKKKKKKKKK";
+
+    move_uploaded_file($_FILES["image_uploads"]["tmp_name"],$_SERVER['DOCUMENT_ROOT'].'/'.$target_file);
+    echo $_SERVER['DOCUMENT_ROOT'].'/image/'.$target_file;
+}
+
+
 ?>
