@@ -1,13 +1,14 @@
+
 <?php
 
 # Image path to be used in the HTML client
-$IMAGE_WEB_DIR = "/images";
+$IMAGE_WEB_DIR = "./images";
 
 # Image path for internal PHP use
 $IMAGE_ROOT_DIR  = "../data/images";
 $ANNOTATIONS_DIR = "../data/annotations";
 
-# Collection name 
+# Collection name
 $COLLECTION_NAME = "collection_01";
 
 # Not annotated image 80% to be presented to user
