@@ -1,8 +1,8 @@
 INFO - getNewImage.php
-Random index = 81
+Random index = 91
 Annotated 20%
 Force not annotated
 No annotations found.
 Annotations a:0:{}
-URL image = ./images/../data/images\collection_01\part_2\pexels-photo-145380.jpg
-Annotations a:4:{s:3:"url";s:68:"./images/../data/images\collection_01\part_2\pexels-photo-145380.jpg";s:2:"id";s:51:"images\collection_01\part_2\pexels-photo-145380.jpg";s:6:"folder";s:7:"../data";s:11:"annotations";a:0:{}}
+URL image = /FYP_WebUI/data/images/collection_01/part_1/abc.jpg
+Annotations a:4:{s:3:"url";s:51:"/FYP_WebUI/data/images/collection_01/part_1/abc.jpg";s:2:"id";s:7:"abc.jpg";s:6:"folder";s:20:"collection_01/part_1";s:11:"annotations";a:0:{}}

@@ -594,7 +594,7 @@
 			//alert(image_info.annotations);
 			console.log("INFO: annotations : " + image_info.annotations);
 			console.log("INFO: annotations : " + JSON.stringify(image_info));
-
+			console.log("image_info: " + JSON.stringify(image_info));
 			$.ajax({
 				url: 'inc/validateTagsAndRegions.php',
 				type: 'POST',
@@ -623,6 +623,9 @@
 
 				},
 				error: function (data, status, error) {
+				    console.log(data);
+                    console.log("status:" + status);
+                    console.log("error:" + error);
 					setStatusAndColor("Unable to send data, please retry or check your connection.", RED_COLOR)
 				}
 			});
@@ -679,42 +682,43 @@
 			return hex;
 		}
 
-		function loadImage() {
+        function loadImage() {
 
-			var dataString = JSON.stringify(user_id);
-			console.log("INFO: " + "loadImage() from php");
+            var dataString = JSON.stringify(user_id);
+            console.log("INFO: " + "loadImage() from php");
 
-			$.ajax({
-				type: 'POST',
-				url: 'inc/getNewImage.php',
-				data: {
-					info: dataString
-				},
-				dataType: "json",
-				success: function (data) {
-					var dataJson = JSON.parse(data);
-					image_info.url = dataJson.url;
-					image_info.id = dataJson.id;
-					image_info.folder = dataJson.folder;
-					image_id = dataJson.id;
-					json_annotations = dataJson.annotations;
-					$('#image_id').text(image_id);
-					$('#image_to_process').attr("src", image_info.url);
+            $.ajax({
+                type: 'POST',
+                url: 'inc/getNewImage.php',
+                data: {
+                    info: dataString
+                },
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    var dataJson = JSON.parse(data);
+                    image_info.url = dataJson.url;
+                    image_info.id = dataJson.id;
+                    image_info.folder = dataJson.folder;
+                    image_id = dataJson.id;
+                    json_annotations = dataJson.annotations;
+                    $('#image_id').text(image_id);
+                    $('#image_to_process').attr("src", image_info.url);
 
-					/*$('#image_to_process').selectAreas(
-					{
-						allowNudge: false,
-						// onChanged:onAreaChanged,
-						onDeleted:onAreaDeleted,
-					});*/
-
-
-				},
-				dataType: 'html'
-			});
+                    /*$('#image_to_process').selectAreas(
+                    {
+                        allowNudge: false,
+                        // onChanged:onAreaChanged,
+                        onDeleted:onAreaDeleted,
+                    });*/
 
 
-		}
+                },
+                dataType: 'html'
+            });
+
+
+        }
 	</script>
 </head>
 

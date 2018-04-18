@@ -65,10 +65,11 @@ class xmlVocReadAnnotationsFile
 		$success =  true;
 		
 		try
-		{			
+		{
+//		    echo getElementsByTagName("filename");
 			$filename = $this->_domDoc->getElementsByTagName("filename")[0];
 			# echo $filename->nodeValue, PHP_EOL;
-			 
+     
 			# Get annotations
 			$listeObject = $this->_domDoc->getElementsByTagName('object');
 			

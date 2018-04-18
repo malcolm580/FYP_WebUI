@@ -2,6 +2,7 @@
 
 include 'xmlVocReadAnnotationsFile.php';
 include 'configuration.php';
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 header('Content-Type: application/json');
 $service_requested = $_POST;
 
@@ -36,7 +37,7 @@ $image_index = 0;
 $annotated_image_index = 0;
 $not_annotated_image_index = 0;
 
-#$file = 'file.log';
+$file = 'file.log';
 #file_put_contents($file, "INFO - Start the loop\n");
 
 foreach(new RecursiveIteratorIterator($it) as $file)

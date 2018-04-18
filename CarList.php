@@ -2,11 +2,15 @@
 //fuck windows
 //windows要在php.ini把extension_dir改成絕對路徑
 //source: https://gist.github.com/emad-elsaid/808796
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-$range = '192.168.0.2-150';
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+$range = '192.168.1.1-192.168.1.150';
 $range = explode('.', $range );
+
 foreach( $range as $index=>$octet )
     $range[$index] = array_map( 'intval', explode('-',$octet) );
+echo ("<pre>");
+print_r ($range);
+echo("</pre>");
 
 // 4 for loops to generate the ip address 4 octets
 for( $octet1=$range[0][0]; $octet1<=(($range[0][1])? $range[0][1]:$range[0][0]); $octet1++ )
@@ -44,5 +48,4 @@ for( $octet1=$range[0][0]; $octet1<=(($range[0][1])? $range[0][1]:$range[0][0]);
                     echo "";
                     //echo "[Not a site]\n"; // if the isn't any response
             }
-
 ?>
