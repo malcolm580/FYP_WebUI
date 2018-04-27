@@ -23,10 +23,15 @@
         <!--</div>-->
     <!--</div>-->
     <!--<br>-->
-    Car List:<br />
+
+    <div class="w3-card w3-round w3-white">
+
+        <div class="w3-container">
+                <p style="font-weight: bold;">Car List:</p>
     <?php
    include "CarList.php";
     ?>
-
+        </div>
+    </div>
 
 </div>
