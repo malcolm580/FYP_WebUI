@@ -1,7 +1,8 @@
 INFO - getNewImage.php
-Random index = 77
-Not annotated 80%
+Random index = 68
+Annotated 20%
+Force not annotated
 No annotations found.
 Annotations a:0:{}
-URL image = /FYP_WebUI/data/images/collection_01/part_1/abc.jpg
-Annotations a:4:{s:3:"url";s:51:"/FYP_WebUI/data/images/collection_01/part_1/abc.jpg";s:2:"id";s:7:"abc.jpg";s:6:"folder";s:20:"collection_01/part_1";s:11:"annotations";a:0:{}}
+URL image = /FYP_WebUI/data/images///
+Annotations a:4:{s:3:"url";s:25:"/FYP_WebUI/data/images///";s:2:"id";s:0:"";s:6:"folder";s:1:"/";s:11:"annotations";a:0:{}}
