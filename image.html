@@ -179,12 +179,12 @@
 				url: "resources/list_of_tags.json",
 				getValue: "name",
 
-				template: {
-					type: "iconRight",
-					fields: {
-						iconSrc: "icon"
-					}
-				},
+//				template: {
+//					type: "iconRight",
+//					fields: {
+//						//iconSrc: "icon"
+//					}
+//				},
 
 
 				list: {
@@ -364,6 +364,11 @@
 			});
 
 			init_finished = true;
+
+            //Fky add following
+            $("#tag_insert").click(function() {
+
+            });
 		})
 
 		function setValidInputTag(_tag) {
@@ -523,10 +528,10 @@
 				return false;
 			}
 
-			if (!isTagInAuthorizedList()) {
-				setStatusAndColor("This tag is not in the predefined list.", RED_COLOR);
-				return false;
-			}
+//			if (!isTagInAuthorizedList()) {
+//				setStatusAndColor("This tag is not in the predefined list.", RED_COLOR);
+//				return false;
+//			}
 
 			// Just change the tag, get area, id, ...
 			$('#image_to_process').selectAreas('setTag', current_area.id, region_tag);
@@ -719,6 +724,8 @@
 
 
         }
+
+
 	</script>
 </head>
 
@@ -736,7 +743,12 @@
 
 				<td id="col2" style="white-space:nowrap;background-color:#fff;width:60%;max-width:800px">
 					<img id="image_to_process" src="image/wait.gif">
+					<div style="text-align:right;float:right;padding-top: 20px;width:50% ">
+						<span class="serif_small" id="image_id">image_001.jpg</span>
+					</div>
 				</td>
+
+
 
 				<td id="col3" style="white-space: nowrap;padding-left:30px;width:350px;max-width:400px;background-color:#fff">
 
@@ -762,9 +774,7 @@
 
 						</div>
 
-						<div style="text-align:right;float:right;padding-top: 20px;width:50% " class="ae_small_90">
-							<span class="ae_small_90" id="image_id">image_001.jpg</span>
-						</div>
+
 
 					</div>
 
@@ -773,14 +783,21 @@
 					</div>
 
 					<div style="padding-top: 4px" class="ae_small_90">
-						<span id="status" id="image_id">> Select a region from the picture.</span>
+						<span id="status">> Select a region from the picture.</span>
 					</div>
+
+					<!--<div style="padding-top:12px;text-align: right;">-->
+						<!--<button id="tagAdd_region" class="tooltip ae_button_level_1">Add Tag-->
+							<!--<span style="padding-left:4px;">-->
+								<!--<img src="image/ic_add_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span>-->
+							<!--<span class="tooltiptext light_green">Add associated tag.</span></button>-->
+					<!--</div>-->
 
 					<div style="padding-top:12px;text-align: right;">
 						<button id="add_region" class="tooltip ae_button_level_1">Set Tag
 							<span style="padding-left:4px;">
 								<img src="image/ic_add_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span>
-							<span class="tooltiptext light_green">Add highlighted region with associated tag.</span></button>
+							<span class="tooltiptext light_green">Set highlighted region with associated tag.</span></button>
 					</div>
 
 					<div style="padding-top:24px;box-sizing: border-box;width=100%;text-align: right;">
