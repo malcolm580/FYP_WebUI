@@ -3,7 +3,7 @@ define ('SITE_ROOT', realpath(dirname(__FILE__)));
 include 'configuration.php';
 extract($_POST);
 $target_dir =  $IMAGE_WEB_DIR.'/'.$COLLECTION_NAME.'/part_1' ;
-$target_file = $target_dir . "/" . uniqid(). ".png";
+$target_file = $target_dir . "/" . uniqid(). ".jpg";
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 

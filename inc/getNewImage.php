@@ -47,7 +47,7 @@ foreach(new RecursiveIteratorIterator($it) as $file)
     if ( (strpos(strtoupper($file), '.JPG') !== false) && (strstr($file, $COLLECTION_NAME)) )
     {
         # echo $file . "<br>";
-        $delimiter = "/";
+        $delimiter = DIRECTORY_SEPARATOR;
         $item = explode($delimiter, $file);
         $nbItems = count($item);
         # Should be A/C type / MSN / Image name
