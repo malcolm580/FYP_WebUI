@@ -1,4 +1,5 @@
 INFO - getNewImage.php
+<<<<<<< HEAD
 Random index = 84
 Annotated 20%
 xml_filepath ../data/annotations\bird1.xml
@@ -7,3 +8,11 @@ Annotations a:2:{i:0;a:5:{s:1:"x";s:2:"99";s:1:"y";s:4:"23.5";s:5:"width";i:119;
 Annotations a:2:{i:0;a:5:{s:1:"x";s:2:"99";s:1:"y";s:4:"23.5";s:5:"width";i:119;s:6:"height";d:80;s:3:"tag";s:3:"bbb";}i:1;a:5:{s:1:"x";s:2:"18";s:1:"y";s:5:"116.5";s:5:"width";i:113;s:6:"height";d:80;s:3:"tag";s:4:"BBBB";}}
 URL image = /FYP_WebUI/data/images/collection_01/test/bird1.jpg
 Annotations a:4:{s:3:"url";s:51:"/FYP_WebUI/data/images/collection_01/test/bird1.jpg";s:2:"id";s:9:"bird1.jpg";s:6:"folder";s:18:"collection_01/test";s:11:"annotations";a:2:{i:0;a:5:{s:1:"x";s:2:"99";s:1:"y";s:4:"23.5";s:5:"width";i:119;s:6:"height";d:80;s:3:"tag";s:3:"bbb";}i:1;a:5:{s:1:"x";s:2:"18";s:1:"y";s:5:"116.5";s:5:"width";i:113;s:6:"height";d:80;s:3:"tag";s:4:"BBBB";}}}
+=======
+Random index = 42
+Not annotated 80%
+No annotations found.
+Annotations a:0:{}
+URL image = /FYP_WebUI/data/images/collection_01/part_1/5ae6d4ebdc920.jpg
+Annotations a:4:{s:3:"url";s:61:"/FYP_WebUI/data/images/collection_01/part_1/5ae6d4ebdc920.jpg";s:2:"id";s:17:"5ae6d4ebdc920.jpg";s:6:"folder";s:20:"collection_01/part_1";s:11:"annotations";a:0:{}}
+>>>>>>> 06897dea124a39f8441e51a8f79930d973f26ed3
