@@ -176,7 +176,7 @@
 			var options = {
 				//data: list_of_tags,
 
-				url: "resources/list_of_tags.json",
+				url: "resources/list_of_tags.json?test=test",
 				getValue: "name",
 
 //				template: {
@@ -188,7 +188,7 @@
 
 
 				list: {
-					maxNumberOfElements: 8,
+					//maxNumberOfElements: 8,
 
 					match: {
 						enabled: true
@@ -535,6 +535,28 @@
 
 			// Just change the tag, get area, id, ...
 			$('#image_to_process').selectAreas('setTag', current_area.id, region_tag);
+
+			//fky -- ajax php add json
+			var tagJson = {'name':region_tag};
+
+            $.ajax({
+                url: 'inc/editTagJson.php',
+                type: 'POST',
+                data: {
+                    sendInfo: JSON.stringify(tagJson)
+                },
+                success: function (data) {
+					//alert('The tag list has been edited!')
+                    console.log("Success");
+                },
+                error: function (data, status, error) {
+                    console.log(data);
+                    console.log("status:" + status);
+                    console.log("error:" + error);
+                    setStatusAndColor("Unable edit tag list.", RED_COLOR)
+                }
+            });
+
 			setStatus("Tag has been set.");
 
 			// Selection another box
