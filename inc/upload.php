@@ -2,8 +2,8 @@
 define ('SITE_ROOT', realpath(dirname(__FILE__)));
 include 'configuration.php';
 extract($_POST);
-$target_dir =  $IMAGE_WEB_DIR.'/'.$COLLECTION_NAME.'/part_1' ;
-$target_file = $target_dir . "/" . uniqid(). ".png";
+$target_dir =  $IMAGE_WEB_DIR.'/'.$COLLECTION_NAME.'/test' ;
+$target_file = $target_dir . "/" . uniqid(). ".jpg";
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
@@ -13,11 +13,11 @@ if ($_FILES["image_uploads"]["size"] > 5000000) {
     $uploadOk = 0;
 }
 
-if ($imageFileType != "jpg" && $imageFileType != "png" &&
+/* if ($imageFileType != "jpg" &&
     $imageFileType != "jpeg") {
-    echo "Sorry, only JPG, JPEG, PNG files are allowed.<br>";
+    echo "Sorry, only JPG, JPEG files are allowed.<br>";
     $uploadOk = 0;
-}
+} */
 
 
 if ($uploadOk == 0) {

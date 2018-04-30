@@ -1,7 +1,7 @@
 INFO - getNewImage.php
-Random index = 4
+Random index = 84
 Annotated 20%
-xml_filepath ../data/annotations/bird1.xml
+xml_filepath ../data/annotations\bird1.xml
 Parse XML
 Annotations a:2:{i:0;a:5:{s:1:"x";s:2:"99";s:1:"y";s:4:"23.5";s:5:"width";i:119;s:6:"height";d:80;s:3:"tag";s:3:"bbb";}i:1;a:5:{s:1:"x";s:2:"18";s:1:"y";s:5:"116.5";s:5:"width";i:113;s:6:"height";d:80;s:3:"tag";s:4:"BBBB";}}
 Annotations a:2:{i:0;a:5:{s:1:"x";s:2:"99";s:1:"y";s:4:"23.5";s:5:"width";i:119;s:6:"height";d:80;s:3:"tag";s:3:"bbb";}i:1;a:5:{s:1:"x";s:2:"18";s:1:"y";s:5:"116.5";s:5:"width";i:113;s:6:"height";d:80;s:3:"tag";s:4:"BBBB";}}
