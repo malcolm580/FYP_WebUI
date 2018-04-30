@@ -2,11 +2,8 @@
 define ('SITE_ROOT', realpath(dirname(__FILE__)));
 include 'configuration.php';
 extract($_POST);
-<<<<<<< HEAD
 $target_dir =  $IMAGE_WEB_DIR.'/'.$COLLECTION_NAME.'/test' ;
-=======
-$target_dir =  $IMAGE_WEB_DIR.'/'.$COLLECTION_NAME.'/part_1' ;
->>>>>>> 06897dea124a39f8441e51a8f79930d973f26ed3
+
 $target_file = $target_dir . "/" . uniqid(). ".jpg";
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
